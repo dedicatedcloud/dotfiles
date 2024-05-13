@@ -33,12 +33,12 @@ function l( ...$args ) {
 
 function vl( ...$args ) {
 	ob_start();
-	foreach ( $args as $arg ) {
-		var_dump( $arg );
-	}
+	array_walk( $args, 'var_dump' );
 	error_log( ob_get_clean() );
 }
 
-function lqm( $args ) {
-	do_action( 'qm/debug', $args );
+function lqm( ...$args ) {
+	foreach ( $args as $arg ) {
+		do_action( 'qm/debug', $arg );
+	}
 }

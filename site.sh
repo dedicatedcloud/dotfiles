@@ -105,6 +105,9 @@ install() {
 	echo "  - Installing PHP"
 	apt-get install -qqy php-fpm php-json php-mysqli php-imagick php-curl php-mbstring php-xml php-zip php-intl
 
+	echo "  - Installing Memcached"
+	apt-get install -qqy memcached php-memcached php-memcache
+
 	echo "  - Installing Git"
 	apt-get install -qqy git
 
